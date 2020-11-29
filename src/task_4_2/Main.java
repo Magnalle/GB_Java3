@@ -19,7 +19,7 @@ public class Main {
     }
 
     static class printProcess implements Runnable{
-        int procNum;
+        private int procNum;
         public printProcess(){
             procNum = counter++;
         }
