@@ -26,10 +26,10 @@ public class Main {
         @Override
         public void run() {
             synchronized (network){
-                synchronized (printer){
-                    networkBusy(procNum);
-                    printerBusy(procNum);
-                }
+                networkBusy(procNum);
+            }
+            synchronized (printer){
+                printerBusy(procNum);
             }
         }
     }
@@ -42,10 +42,10 @@ public class Main {
         @Override
         public void run() {
             synchronized (scaner){
-                synchronized (network){
-                    scanerBusy(procNum);
-                    networkBusy(procNum);
-                }
+                scanerBusy(procNum);
+            }
+            synchronized (network){
+                networkBusy(procNum);
             }
         }
     }
